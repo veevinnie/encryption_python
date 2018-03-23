@@ -1,0 +1,11 @@
+$ pip install cryptography
+
+from cryptography.fernet import Fernet
+>>> # CONFIDENTIAL MESSAGE!
+>>> key = Fernet.generate_key()
+>>> f = Fernet(key)
+>>> token = f.encrypt(b"A secret message. Not for prying eyes.")
+>>> token
+'...'
+>>> f.decrypt(token)
+'A secret message. Not for prying eyes.'
